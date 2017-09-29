@@ -1,22 +1,11 @@
+/* jshint esversion: 6 */
 const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const session = require('express-session');
 const chalk = require('chalk');
 const massive = require('massive');
 
 const app = express();
 
 let db;
-
-app.use(cors());
-app.use(bodyParser.json());
-app.use(session({
-    saveUninitialized: true,
-    resave: false,
-    secret: 'Shhh!!!  Don\'t tell!',
-    name: 'split a node app',
-}));
 
 app.use(express.static(__dirname + '/../public'));
 
